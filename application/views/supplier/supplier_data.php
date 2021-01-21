@@ -10,7 +10,7 @@
       <h3 class="card-title">Data Supplier</h3>
       <div class="float-right">
         <a href="<?= site_url('supplier/add'); ?>" class="btn btn-primary">
-          <i class="fa fa-user-plus"></i> Create
+          <i class="fa fa-plus"></i> Create
         </a>
       </div>
     </div>
@@ -38,6 +38,9 @@
               <td><?= $data->address; ?></td>
               <td><?= $data->description; ?></td>
               <td class="text-center" width="160px">
+                <a href="<?= site_url('supplier/edit/' . $data->supplier_id) ?>" class="btn btn-xs btn-primary">
+                  <i class="fa fa-pencil-alt"></i> Edit
+                </a>
                 <a href="<?= site_url('supplier/del/' . $data->supplier_id) ?>" class="btn btn-xs btn-danger" onclick="return confirm('Apakah anda yakin?')">
                   <i class="fa fa-trash"></i> Delete
                 </a>
