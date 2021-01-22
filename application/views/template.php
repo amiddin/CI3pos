@@ -111,7 +111,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="<?= site_url('customer'); ?>" class="nav-link">
                 <i class="fa fa-users"></i>
                 <p>
                   Customers
