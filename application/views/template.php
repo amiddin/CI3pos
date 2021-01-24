@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url() ?>assets/dist/css/adminlte.min.css">
 </head>
@@ -95,7 +97,7 @@
                with font-awesome or any other icon font library -->
             <li class="nav-header">MAIN NAVIGATION</li>
             <li class="nav-item">
-              <a href="<?= site_url('dashboard'); ?>" class="nav-link">
+              <a href="<?= site_url('dashboard'); ?>" class="nav-link . <?= $this->uri->segment(1) == 'dashboard' || $this->uri->segment(1) == '' ? "active" : ''; ?> ">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -103,7 +105,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= site_url('supplier'); ?>" class="nav-link">
+              <a href="<?= site_url('supplier'); ?>" class="nav-link . <?= $this->uri->segment(1) == 'supplier' || $this->uri->segment(1) == '' ? "active" : ''; ?> ">
                 <i class="fa fa-truck"></i>
                 <p>
                   Supplier
@@ -111,7 +113,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= site_url('customer'); ?>" class="nav-link">
+              <a href="<?= site_url('customer'); ?>" class="nav-link . <?= $this->uri->segment(1) == 'customer' || $this->uri->segment(1) == '' ? "active" : ''; ?> ">
                 <i class="fa fa-users"></i>
                 <p>
                   Customers
@@ -128,19 +130,19 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="<?= site_url('category'); ?>" class="nav-link . <?= $this->uri->segment(1) == 'category' || $this->uri->segment(1) == '' ? "active" : ''; ?> ">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Categories</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="<?= site_url('unit'); ?>" class="nav-link . <?= $this->uri->segment(1) == 'unit' || $this->uri->segment(1) == '' ? "active" : ''; ?> ">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Units</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="<?= site_url('item'); ?>" class="nav-link . <?= $this->uri->segment(1) == 'item' || $this->uri->segment(1) == '' ? "active" : ''; ?> ">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Items</p>
                   </a>
@@ -241,12 +243,21 @@
 
   <!-- jQuery -->
   <script src="<?= base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
+  <!-- DataTables -->
+  <script src="<?= base_url() ?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?= base_url() ?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="<?= base_url() ?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="<?= base_url() ?>assets/dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="<?= base_url() ?>assets/dist/js/demo.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('#table1').DataTable()
+    })
+  </script>
 </body>
 
 </html>

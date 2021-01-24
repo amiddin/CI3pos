@@ -16,7 +16,7 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body table-responsive">
-      <table class="table table-sm">
+      <table class="table table-bordered table-striped" id="table1">
         <thead>
           <tr>
             <th>Nomor</th>

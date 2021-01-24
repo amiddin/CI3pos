@@ -1,15 +1,16 @@
 <section class="content-header">
   <div class="container-fluid">
-    <h1>Customers</h1>
+    <h1>Categories</h1>
   </div>
 </section>
 <!-- content -->
 <section class="content">
+  <?php $this->view('messages') ?>
   <div class="card">
     <div class="card-header">
-      <h3 class="card-title">Data Customer</h3>
+      <h3 class="card-title">Data category</h3>
       <div class="float-right">
-        <a href="<?= site_url('customer/add'); ?>" class="btn btn-primary">
+        <a href="<?= site_url('category/add'); ?>" class="btn btn-primary">
           <i class="fa fa-plus"></i> Create
         </a>
       </div>
@@ -21,9 +22,6 @@
           <tr>
             <th>Nomor</th>
             <th>Name</th>
-            <th>Gender</th>
-            <th>Phone</th>
-            <th>Address</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -32,16 +30,13 @@
           $no = 1;
           foreach ($row->result() as $key => $data) {  ?>
             <tr>
-              <td><?= $no++; ?>.</td>
+              <td style="width: 10%;"><?= $no++; ?>.</td>
               <td><?= $data->name; ?></td>
-              <td><?= $data->gender; ?></td>
-              <td><?= $data->phone; ?></td>
-              <td><?= $data->address; ?></td>
-              <td class="text-center" width="160px">
-                <a href="<?= site_url('customer/edit/' . $data->customer_id) ?>" class="btn btn-xs btn-primary">
+              <td class="content-center" width="160px">
+                <a href="<?= site_url('category/edit/' . $data->category_id) ?>" class="btn btn-xs btn-primary">
                   <i class="fa fa-pencil-alt"></i> Edit
                 </a>
-                <a href="<?= site_url('customer/del/' . $data->customer_id) ?>" class="btn btn-xs btn-danger" onclick="return confirm('Apakah anda yakin?')">
+                <a href="<?= site_url('category/del/' . $data->category_id) ?>" class="btn btn-xs btn-danger" onclick="return confirm('Apakah anda yakin?')">
                   <i class="fa fa-trash"></i> Delete
                 </a>
               </td>
